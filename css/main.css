@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --index: calc(1vh + 1vw);
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-wrapper {
+  height: 100%;
+  display: flex;
+}
+
+.slider {
+}
+
+.slider__item {
+  width: 20vw;
+}
+.slider__img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
