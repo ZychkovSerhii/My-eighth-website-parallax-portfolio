@@ -5,7 +5,8 @@
 }
 
 :root {
-  --index: calc(1vh + 1vw);
+  --index: calc(1vw + 1vh);
+  --transition: 1.25s cubic-bezier(0.2, 0.6, 0, 1);
 }
 html,
 body {
@@ -16,17 +17,47 @@ body {
 .main-wrapper {
   height: 100%;
   display: flex;
+  gap: var(--index);
+  background-image: url(/img/bg.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .slider {
+  transform: rotate(12deg);
+  overflow: visible;
+}
+
+.slider:nth-child(odd) {
+  transform: rotate(192.5deg);
 }
 
 .slider__item {
-  width: 20vw;
+  width: 22vw;
+  margin-bottom: calc(var(--index) * 2.1);
+  cursor: pointer;
+  box-shadow: rgb(0 0 0 /0.15) 0 0 30px 10px;
+}
+.slider__item:hover {
+  transform: scale(1.05);
+  transition: var(--transition);
+  will-change: transfor;
 }
 .slider__img {
-  display: block;
   height: 100%;
   width: 100%;
   background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+.slider .slider__wrapper {
+  transition: var(--transition) !important;
+  will-change: transform;
+}
+.swiper-wrapper {
+  height: auto;
+}
+
+.slider:nth-child(odd) .slider__img {
+  transform: rotate(-180deg);
 }
